@@ -4,7 +4,9 @@ First, I queried the "EmailEvents" table to look for emails that users in our co
 - came from external sender (not from our domain)
 - arived within the last 24 hours
 - contain key words that are typical for phishing emails, these are "urgent", "verify", "password", "action required".
+
 Second, I queried the "EmailUrlInfo" table to look for those emails that contain a link.
+
 Lastly, I joined these 2 tables, so if there is a result event (a suspicious mail), in case there is a link in it, it gets resolved into the corresponding URL based on its network message ID.
 This is useful to immediately see if there is something suspicious about the URL itself (e.g. insecure protocol like http).
 
